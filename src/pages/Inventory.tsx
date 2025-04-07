@@ -7,48 +7,37 @@ const Inventory = () => {
   const vehicles = [
     {
       id: 1,
-      name: 'Tesla Model S',
-      price: '$89,990',
-      image: 'https://images.unsplash.com/photo-1551830820-330a71b99659',
-      description: 'Luxury electric sedan with exceptional performance',
+      name: 'BMW i7',
+      price: 'Starting at $119,300',
+      image: '/images/vehicles/bmw-i7.jpg',
+      description: 'Luxury electric sedan with cutting-edge technology',
       type: 'sedan',
-      year: 2023,
+      year: 2024,
       mileage: '0',
-      color: 'White',
+      color: 'Mineral White',
     },
     {
       id: 2,
-      name: 'Tesla Model 3',
-      price: '$42,990',
-      image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e',
-      description: 'Premium electric sedan with advanced features',
+      name: 'Porsche Taycan',
+      price: 'Starting at $190,000',
+      image: '/images/vehicles/porsche-taycan.jpg',
+      description: 'High-performance electric sports car',
       type: 'sedan',
-      year: 2023,
+      year: 2024,
       mileage: '0',
-      color: 'Black',
+      color: 'Frozen Blue Metallic',
     },
     {
       id: 3,
-      name: 'Tesla Model X',
-      price: '$99,990',
-      image: 'https://images.unsplash.com/photo-1551830822-5a971f48b6d8',
-      description: 'Luxury electric SUV with falcon wing doors',
-      type: 'suv',
-      year: 2023,
+      name: 'Lamborghini Huracan',
+      price: 'Starting at $209,400',
+      image: '/images/vehicles/lamborghini-huracan.jpg',
+      description: 'Iconic supercar with breathtaking performance',
+      type: 'sports',
+      year: 2024,
       mileage: '0',
-      color: 'Blue',
-    },
-    {
-      id: 4,
-      name: 'Tesla Model Y',
-      price: '$54,990',
-      image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89',
-      description: 'Versatile electric SUV with ample space',
-      type: 'suv',
-      year: 2023,
-      mileage: '0',
-      color: 'Red',
-    },
+      color: 'Verde Mantis',
+    }
   ];
 
   const filteredVehicles = filter === 'all' 
@@ -56,29 +45,41 @@ const Inventory = () => {
     : vehicles.filter(vehicle => vehicle.type === filter);
 
   return (
-    <div className="section bg-white">
-      <div className="container">
+    <div className="pt-20 min-h-screen bg-white">
+      <div className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold text-center mb-12">Our Inventory</h1>
         
         {/* Filters */}
         <div className="flex justify-center space-x-4 mb-12">
           <button
             onClick={() => setFilter('all')}
-            className={`btn ${filter === 'all' ? 'btn-primary' : 'btn-secondary'}`}
+            className={`px-6 py-2 rounded-full transition-colors ${
+              filter === 'all' 
+                ? 'bg-primary text-white' 
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
           >
             All Vehicles
           </button>
           <button
             onClick={() => setFilter('sedan')}
-            className={`btn ${filter === 'sedan' ? 'btn-primary' : 'btn-secondary'}`}
+            className={`px-6 py-2 rounded-full transition-colors ${
+              filter === 'sedan' 
+                ? 'bg-primary text-white' 
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
           >
             Sedans
           </button>
           <button
-            onClick={() => setFilter('suv')}
-            className={`btn ${filter === 'suv' ? 'btn-primary' : 'btn-secondary'}`}
+            onClick={() => setFilter('sports')}
+            className={`px-6 py-2 rounded-full transition-colors ${
+              filter === 'sports' 
+                ? 'bg-primary text-white' 
+                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+            }`}
           >
-            SUVs
+            Sports Cars
           </button>
         </div>
 
@@ -90,16 +91,18 @@ const Inventory = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
-              <img
-                src={vehicle.image}
-                alt={vehicle.name}
-                className="w-full h-64 object-cover"
-              />
+              <div className="relative pb-[56.25%]">
+                <img
+                  src={vehicle.image}
+                  alt={vehicle.name}
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                />
+              </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{vehicle.name}</h3>
-                <p className="text-accent font-bold mb-4">{vehicle.price}</p>
+                <h3 className="text-2xl font-bold mb-2">{vehicle.name}</h3>
+                <p className="text-primary font-bold text-xl mb-4">{vehicle.price}</p>
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
                     <p className="text-gray-600">Year</p>
@@ -111,15 +114,15 @@ const Inventory = () => {
                   </div>
                   <div>
                     <p className="text-gray-600">Type</p>
-                    <p className="font-medium">{vehicle.type.toUpperCase()}</p>
+                    <p className="font-medium capitalize">{vehicle.type}</p>
                   </div>
                   <div>
                     <p className="text-gray-600">Color</p>
                     <p className="font-medium">{vehicle.color}</p>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4">{vehicle.description}</p>
-                <button className="btn btn-primary w-full">
+                <p className="text-gray-600 mb-6">{vehicle.description}</p>
+                <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary-dark transition-colors">
                   Schedule Test Drive
                 </button>
               </div>

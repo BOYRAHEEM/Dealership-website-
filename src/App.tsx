@@ -10,6 +10,7 @@ import Map from './components/Map';
 import FeaturedVehicles from './components/FeaturedVehicles';
 import Newsletter from './components/Newsletter';
 import ServiceCenter from './components/ServiceCenter';
+import Inventory from './pages/Inventory';
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
               </>
             }
           />
+          <Route path="/inventory" element={<Inventory />} />
         </Routes>
         <Footer />
       </div>
@@ -39,4 +41,4 @@ const App = () => {
   );
 };
 
-export default App; 
+export default App;
