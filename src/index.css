@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #000000;
+    --secondary: #1d1d1f;
+    --accent: #0071e3;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-24 md:py-32;
+  }
+
+  .btn {
+    @apply px-6 py-2.5 rounded-full font-medium transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-accent/90;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-accent border border-accent hover:bg-accent/10;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl overflow-hidden transition-all duration-300;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 rounded-full bg-gray-100 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-accent;
+  }
+
+  .section-title {
+    @apply text-5xl md:text-6xl font-semibold text-center mb-4 tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-xl text-gray-600 text-center mb-12 max-w-2xl mx-auto;
+  }
+
+  .hero-title {
+    @apply text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight;
+  }
+
+  .hero-subtitle {
+    @apply text-2xl md:text-3xl text-gray-600 max-w-2xl;
+  }
+} 
