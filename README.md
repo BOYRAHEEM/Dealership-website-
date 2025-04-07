@@ -1,70 +1,55 @@
-# Raheem's Dealership Website
+# Rahim's Luxury Car Dealership
 
-A modern, responsive car dealership website inspired by Tesla's design aesthetic. Built with React, TypeScript, and Tailwind CSS.
+A modern web application for a luxury car dealership built with React, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- Responsive design for all devices
-- Modern UI with smooth animations
-- Vehicle inventory with filtering
-- Contact form
-- Interactive map
-- Team and company information
-- Mobile-friendly navigation
+- Interactive vehicle showcase with high-quality images
+- Virtual showroom experience
+- Financing calculator
+- Service center information
+- Working hours and contact details
+- Newsletter subscription
+- Vehicle comparison tool
+- Google Maps integration
+- Customer testimonials
 
 ## Tech Stack
 
 - React
 - TypeScript
 - Tailwind CSS
-- Framer Motion
-- React Router
-- React Icons
+- Vite
+- Google Maps API
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-
-### Installation
-
-1. Clone the repository:
+1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/raheems-dealership.git
-cd raheems-dealership
+git clone [repository-url]
 ```
 
-2. Install dependencies:
+2. Install dependencies
 ```bash
 npm install
 ```
 
-3. Start the development server:
+3. Start the development server
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+4. Open http://localhost:5174 in your browser
 
 ## Project Structure
 
 ```
 src/
-├── components/     # Reusable UI components
-├── pages/         # Page components
-├── assets/        # Static assets
-└── App.tsx        # Main application component
+  ├── components/     # React components
+  ├── pages/         # Page components
+  ├── assets/        # Static assets
+  └── styles/        # CSS styles
 ```
-
-## Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript type checking
 
 ## Contributing
 
@@ -76,7 +61,7 @@ src/
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Contact
 
