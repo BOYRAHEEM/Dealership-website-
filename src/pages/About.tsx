@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const About = () => {
   const teamMembers = [
     {
-      name: 'Rahim Johnson',
+      name: 'Rahim Coolman',
       role: 'Founder & CEO',
       image: '/images/team/rahim.jpg',
       description: 'With over 20 years of experience in the luxury automotive industry, Rahim founded the dealership with a vision to provide an unparalleled car buying experience.',
