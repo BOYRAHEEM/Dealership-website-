@@ -11,6 +11,7 @@ import FeaturedVehicles from './components/FeaturedVehicles';
 import Newsletter from './components/Newsletter';
 import ServiceCenter from './components/ServiceCenter';
 import Inventory from './pages/Inventory';
+import About from './pages/About';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
             }
           />
           <Route path="/inventory" element={<Inventory />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>
