@@ -183,7 +183,11 @@ const About = () => {
                 className="bg-white rounded-lg shadow-lg overflow-hidden"
               >
                 <div className="relative pb-[100%]">
-                  <div className="absolute inset-0 bg-gray-200"></div>
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">{member.name}</h3>
