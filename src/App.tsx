@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import VehicleComparison from './components/VehicleComparison';
 import FinancingCalculator from './components/FinancingCalculator';
 import WorkingHours from './components/WorkingHours';
 import Testimonials from './components/Testimonials';
@@ -24,7 +23,6 @@ const App = () => {
               <>
                 <Hero />
                 <FeaturedVehicles />
-                <VehicleComparison />
                 <FinancingCalculator />
                 <WorkingHours />
                 <ServiceCenter />
