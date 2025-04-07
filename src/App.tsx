@@ -12,13 +12,19 @@ import Newsletter from './components/Newsletter';
 import ServiceCenter from './components/ServiceCenter';
 import Inventory from './pages/Inventory';
 import About from './pages/About';
+import ViewModel from './pages/ViewModel';
+import BookTestDrive from './pages/BookTestDrive';
+import Contact from './pages/Contact';
+import Services from './pages/Services';
+import Home from './pages/Home';
 
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-900">
         <Navbar />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route
             path="/"
             element={
@@ -34,8 +40,12 @@ const App = () => {
               </>
             }
           />
-          <Route path="/inventory" element={<Inventory />} />
           <Route path="/about" element={<About />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/vehicle/:id" element={<ViewModel />} />
+          <Route path="/book-test-drive" element={<BookTestDrive />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
         </Routes>
         <Footer />
       </div>

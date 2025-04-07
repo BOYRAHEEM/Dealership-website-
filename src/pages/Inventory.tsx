@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Inventory = () => {
   const [filter, setFilter] = useState('all');
@@ -7,7 +8,8 @@ const Inventory = () => {
   const vehicles = [
     {
       id: 1,
-      name: 'BMW i7',
+      brand: 'BMW',
+      model: 'i7',
       price: 'Starting at $119,300',
       image: '/images/vehicles/bmw-i7.jpg',
       description: 'Luxury electric sedan with cutting-edge technology',
@@ -18,7 +20,8 @@ const Inventory = () => {
     },
     {
       id: 2,
-      name: 'Porsche Taycan',
+      brand: 'Porsche',
+      model: 'Taycan',
       price: 'Starting at $190,000',
       image: '/images/vehicles/porsche-taycan.jpg',
       description: 'High-performance electric sports car',
@@ -29,7 +32,8 @@ const Inventory = () => {
     },
     {
       id: 3,
-      name: 'Lamborghini Huracan',
+      brand: 'Lamborghini',
+      model: 'Huracan',
       price: 'Starting at $209,400',
       image: '/images/vehicles/lamborghini-huracan.jpg',
       description: 'Iconic supercar with breathtaking performance',
@@ -96,12 +100,12 @@ const Inventory = () => {
               <div className="relative pb-[56.25%]">
                 <img
                   src={vehicle.image}
-                  alt={vehicle.name}
+                  alt={vehicle.brand + ' ' + vehicle.model}
                   className="absolute top-0 left-0 w-full h-full object-cover"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">{vehicle.name}</h3>
+                <h3 className="text-2xl font-bold mb-2">{vehicle.brand + ' ' + vehicle.model}</h3>
                 <p className="text-primary font-bold text-xl mb-4">{vehicle.price}</p>
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div>
@@ -122,9 +126,21 @@ const Inventory = () => {
                   </div>
                 </div>
                 <p className="text-gray-600 mb-6">{vehicle.description}</p>
-                <button className="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary-dark transition-colors">
-                  Schedule Test Drive
-                </button>
+                <div className="space-y-3">
+                  <Link
+                    to={`/vehicle/${vehicle.id}`}
+                    className="block w-full bg-gold-500 hover:bg-gold-600 text-black font-semibold px-8 py-4 rounded-full text-center transition-all duration-300 transform hover:scale-105"
+                  >
+                    View Details
+                  </Link>
+                  <Link
+                    to="/book-test-drive"
+                    state={{ vehicle }}
+                    className="block w-full bg-transparent border-2 border-gold-500 hover:bg-gold-500/10 text-gold-500 font-semibold px-8 py-4 rounded-full text-center transition-all duration-300 transform hover:scale-105"
+                  >
+                    Book a Test Drive
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}

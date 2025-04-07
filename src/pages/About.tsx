@@ -120,7 +120,13 @@ const About = () => {
                     premium vehicles.
                   </p>
                 </div>
-                <div className="w-full md:w-1/2 h-64 bg-gray-200 rounded-lg"></div>
+                <div className="w-full md:w-1/2 h-64 overflow-hidden rounded-lg">
+                  <img
+                    src="/images/journey-2010.jpg"
+                    alt="Our first showroom in 2010"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
               <div className="flex flex-col md:flex-row-reverse items-center gap-8">
                 <div className="w-full md:w-1/2">
@@ -130,7 +136,13 @@ const About = () => {
                     and launched our signature concierge service for our valued clients.
                   </p>
                 </div>
-                <div className="w-full md:w-1/2 h-64 bg-gray-200 rounded-lg"></div>
+                <div className="w-full md:w-1/2 h-64 overflow-hidden rounded-lg">
+                  <img
+                    src="/images/journey-2015.jpg"
+                    alt="Our expanded service center in 2015"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="w-full md:w-1/2">
@@ -140,7 +152,13 @@ const About = () => {
                     division and implemented virtual showroom experiences for our clients.
                   </p>
                 </div>
-                <div className="w-full md:w-1/2 h-64 bg-gray-200 rounded-lg"></div>
+                <div className="w-full md:w-1/2 h-64 overflow-hidden rounded-lg">
+                  <img
+                    src="/images/journey-2020.jpg"
+                    alt="Our electric vehicle showroom in 2020"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
